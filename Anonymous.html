@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        //Anonymous function to find ODD numbers
+
+        let odd = function () {
+            let result = arr.filter(n => n % 2 !== 0);
+            console.log("Anonymous function to find ODD numbers", "\n", result);
+        }
+        odd();
+
+        //IIFE function to find ODD numbers
+        (function () {
+            let result = arr.filter(n => n % 2 !== 0);
+            console.log("\n", "IIFE function to find ODD numbers", "\n", result);
+        }
+        )();
+
+
+        //Titlecase
+        let str = "hi how are you?";
+
+        //Anonymous function for TitleCase
+        function titleCase() {
+            var result = str.toLowerCase(str).split(" ");
+            for (var i = 0; i < result.length; i++) {
+                result[i] = result[i][0].toUpperCase() + result[i].slice(1);
+            }
+            console.log("\n", "Anonymous function for TitleCase", "\n", result.join(" "));
+            return result;
+        }
+        titleCase();
+
+        //IIFE function for TitleCase
+        (function () {
+            var result = str.toLowerCase(str).split(" ");
+            for (var i = 0; i < result.length; i++) {
+                result[i] = result[i][0].toUpperCase() + result[i].slice(1);
+            }
+            console.log("\n", "IIFE function for TitleCase", "\n", result.join(" "));
+        }
+        )();
+
+        //Anonymous function to find sum of all numbers
+        let sum = function () {
+            let result = arr.reduce((a, b) => a + b);
+            console.log("\n", "Anonymous function to find sum of all numbers", "\n", result);
+        }
+        sum();
+
+        //IIFE function to find sum of all numbers
+        (function () {
+            let result = arr.reduce((a, b) => a + b);
+            console.log("\n", "IIFE function to find sum of all numbers", "\n", result);
+        }
+        )();
+
+        //Anonymous function to find prime numbers  
+        let prime = function () {
+            let result = [];
+            arr.forEach((num) => {
+                let c = 0
+                for (let i = 0; i <= num; i++) {
+                    if (num % i === 0) {
+                        c++;
+                    }
+                }
+                if (c === 2) {
+                    result.push(num);
+                }
+            })
+            console.log("\n", "Anonymous function to find prime numbers", "\n", result);
+        }
+        prime();
+
+        //IIFE function to find prime numbers
+        (function () {
+            let result = [];
+            arr.forEach((num) => {
+                let c = 0;
+                for (let i = 0; i <= num; i++) {
+                    if (num % i === 0) {
+                        c++;
+                    }
+                }
+                if (c === 2) {
+                    result.push(num);
+                }
+            })
+            console.log("\n", "IIFE function to find prime numbers", "\n", result);
+        })();
+
+        //Anonymous function to find palindromes in an array
+        let array = ["sri", "madam", "ada", "guvi", 'pap'];
+        let palindromes = function () {
+            let result = [];
+            array.filter(w => {
+                let len = w.length;
+                for (let i = 0; i < len / 2; i++) {
+                    if (w[i] == w[len - i - 1]) {
+                        result.push(w);
+                        break;
+                    } else {
+                        return false;
+                    }
+                }
+            });
+            console.log("\n","Anonymous function to find palindromes in an array", "\n",result);
+        }
+        palindromes();
+
+        //IIFE function to find palindromes in an array
+        (function () {
+                let result = [];
+                array.filter(w => {
+                    let len = w.length;
+                    for (let i = 0; i < len / 2; i++) {
+                        if (w[i] == w[len - i - 1]) {
+                            result.push(w);
+                            break;
+                        } else {
+                            return false;
+                        }
+                    }
+                });
+                console.log("\n","IIFE function to find palindromes in an array", "\n",result);
+        })();
+
+        //Anonymous function to find median
+        let arr1=[2,3,4,5];
+        let arr2=[9,8,7,6];
+
+        let median = function () {
+            let concat=arr1.concat(arr2);
+            concat=concat.sort(function(a,b){return a-b});
+        let length=concat.length;
+        if(length %2==0){
+            console.log("\n","Anonymous function to find median","\n",(concat[length/2]+concat[(length/2)]-1)/2);
+        }
+        else{
+            console.log("\n","Anonymous function to find median","\n",concat[(length/2)-0.5]);
+        }
+        }
+         median();   
+
+
+         //IIFE function to find median
+         (function () {
+            let concat=arr1.concat(arr2);
+            concat=concat.sort(function(a,b){return a-b});
+        let length=concat.length;
+        if(length %2==0){
+            console.log("\n","IIFE function to find median","\n",(concat[length/2]+concat[(length/2)]-1)/2);
+        }
+        else{
+            console.log("\n","IIFE function to find median","\n",concat[(length/2)-0.5]);
+        }
+        })();
+         
+
+        let array1=[1,2,3,4,4,5,6,6,7,8,8,8];
+
+        //Anonymous function to find duplicate
+        let duplicate= function(){
+            let result=[];
+            for(let i=0;i<array1.length;i++){
+               if(!result.includes(array1[i])){
+                result.push(array1[i]);}
+            }console.log("\n","Anonymous function to find duplicate","\n",result);
+        }
+        duplicate();
+
+
+        //IIFE function to find duplicate
+        (function () {
+            let result=[];
+            for(let i=0;i<array1.length;i++){
+               if(!result.includes(array1[i])){
+                result.push(array1[i]);}
+            }console.log("\n","IIFE function to find duplicate","\n",result);
+        }
+        )();
+
+        //Anonymous function to rotate an array
+        let arr3=[2,3,4,5];
+        let times=3;
+        let rotate=function(){
+           for(let i=0;i<times;i++){ 
+            let del=arr3.pop();
+            let result=arr3.unshift(del);
+           }console.log("\n","Anonymous function to rotate an array","\n",arr3); 
+        }
+        rotate();
+
+        //IIFE function to rotate an array
+        (function () {
+            for(let i=0;i<times;i++){ 
+            let del=arr3.pop();
+            let result=arr3.unshift(del);
+           }console.log("\n","IIFE function to rotate an array","\n",arr3); 
+        }
+        )();
+
+
+
+    </script>
+</body>
+
+</html>
